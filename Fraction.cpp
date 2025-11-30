@@ -86,15 +86,13 @@ Fraction Fraction::divide(const Fraction& other) const {
     return Fraction(new_num, new_den);
 }
 
-Fraction Fraction::add(const Fraction& other) const 
-{
+Fraction Fraction::add(const Fraction& other) const {
     int new_num = (this->num * other.denom) + (other.num * this->denom);
     int new_den = this->denom * other.denom;
     return Fraction(new_num, new_den);
 }
 
-Fraction Fraction::subtract(const Fraction& other) const 
-{
+Fraction Fraction::subtract(const Fraction& other) const {
     int new_num = (this->num * other.denom) - (other.num * this->denom);
     int new_den = this->denom * other.denom;
     return Fraction(new_num, new_den);
@@ -107,9 +105,15 @@ Fraction Fraction::multiply(const Fraction& other) const
     return Fraction(new_num, new_den);
 }
 
+void Fraction::show() const {
+    cout << num;
+}
 
-void Fraction::show() const
+void Fraction::showSum(const Fraction& other) const 
 {
+    this->add(other).show();
+}
 
-};
+;
+
 
